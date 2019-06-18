@@ -18,7 +18,7 @@ from django.core.mail import EmailMultiAlternatives
 from django.db import models, transaction
 from django.dispatch import receiver
 from django.template.loader import select_template
-from django.urls import reverse
+from django.urls import reverse_lazy as reverse
 from django.utils import formats, timezone
 from django.utils.encoding import force_text, smart_text
 from django.utils.functional import cached_property

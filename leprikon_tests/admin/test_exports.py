@@ -6,6 +6,7 @@ from django.utils.encoding import force_text
 
 
 class SimpleTest(TestCase):
+
     def test_exports(self):
         request = RequestFactory().post('/')  # export doesn't care about request
         for a in (a for a in admin.site._registry.values() if hasattr(a, 'export_as_csv')):

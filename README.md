@@ -1,13 +1,10 @@
-Leprikón
-========
+# Leprikón
 
 Leprikón is web information system for leisure centres and other educational organizations.
 
 [www.leprikon.cz](https://www.leprikon.cz/)
 
-
-Installation with docker-compose
---------------------------------
+## Installation with docker-compose
 
 ```shell
 # create and enter an empty directory of your choice

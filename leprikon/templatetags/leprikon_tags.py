@@ -85,7 +85,7 @@ def registration_links(context, subject):
     now = timezone.now()
     context = context.__copy__()
     context['subject'] = subject
-    if context['request'].user.is_authenticated():
+    if context['request'].user.is_authenticated:
         context['registrations'] = subject.registrations.filter(user=context['request'].user, canceled=None)
     else:
         context['registrations'] = []

@@ -1,13 +1,14 @@
-from django.conf.urls import url
+from django.urls import path
 
 from . import views
 
 
-def l_url(pattern, name):
-    return url(pattern, getattr(views, name), name=name)
+def l_path(pattern, name):
+    return path(pattern, getattr(views, name), name=name)
 
 
+app_name = 'leprikon.api'
 urlpatterns = [
-    l_url(r'^participants/(?P<subject_id>[0-9]+)/$', 'participants'),
-    l_url(r'^rocketchat/$', 'rocketchat'),
+    l_path('participants/<int:subject_id>/', 'participants'),
+    l_path('rocketchat/$', 'rocketchat'),
 ]

@@ -10,7 +10,6 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /app
 
 COPY requirements.txt /app/
-COPY patch /app/patch
 
 # install requirements and generate czech locale
 RUN apt-get update \
@@ -36,8 +35,6 @@ RUN apt-get update \
  && pip3 install --no-cache-dir --upgrade pip \
  && pip install --no-cache-dir -r requirements.txt \
  && rm requirements.txt \
- && patch /usr/local/lib/python3.6/dist-packages/cmsplugin_filer_folder/cms_plugins.py patch/cmsplugin_filer_folder-cms_plugins.patch \
- && rm -r patch \
  && apt-get -y purge \
     build-essential \
     gcc \

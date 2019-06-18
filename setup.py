@@ -13,8 +13,7 @@ with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
 with open(os.path.join(os.path.dirname(__file__), 'requirements.in')) as requirements:
     install_requires = [
         line.strip() if not line.startswith('-e ') else line.strip().split('egg=')[1]
-        for line in requirements.readlines()
-        if not line.startswith('#')
+        for line in requirements.readlines() if not line.startswith('#')
     ]
 
 setup(
